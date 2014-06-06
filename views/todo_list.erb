@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+   <html lang="en">
+      <head>
+         <meta charset="utf-8">
+         <title>Knockout.js</title>
+         <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+         <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js'></script>
+          <script type="text/javascript" src="js/todo_list.js"></script>
+      </head>
+      <body>
+      <div id="todoapp">
+          <header>
+            <h1><span data-bind="text: page_title"></span></h1>
+            <input id="new-todo" type="text" placeholder="What needs to be done?" data-bind="value:inputTitle,event: { keyup: createOnEnter}"/>
+          </header>
+
+          <section id="main" style="display: block;">
+            <div data-bind="visible:todos().length>0">
+                <input id="toggle-all" type="checkbox" data-bind="checked:markAll"/>
+                <label for="toggle-all">Mark all as complete</label>
+                <button data-bind="click: sortItems">Sort</button>
+                <button id="commit">Commit</button>
+            </div>
+            <ul id="todo-list" data-bind="template:{ name:'item-template',foreach: todos}">
+            </ul>
+          </section>
+          
+          <footer style="display: block;">
+            <div data-bind="visible:todos().length>0">
+              <div class="todo-count"><b data-bind="text:todos().length"></b> items left</div>
+              <!-- ko if: doneTodos() > 0 -->
+                <a id="clear-completed" data-bind="click:clear">
+                    Clear <span data-bind="html:countDoneText(true)"></span>.
+                </a>
+              <!-- /ko -->
+              <br style="clear:both"/>
+            </div>
+          </footer>
+      </div>
+                
+      <script type="text/template" id="item-template">
+          <li data-bind="event:{ dblclick :$root.toggleEditMode},css : {done:done() }">
+              <div class="view" >
+                <input class="toggle" type="checkbox" data-bind="checked:done"/>
+                <label data-bind="text:title"></label>
+                <a class="destroy"></a>
+              </div>
+              <input class="edit" type="text" data-bind="value:title,event: { keyup: $root.editOnEnter}" />
+          </li>
+      </script>
+
+      </body>
+</html>
