@@ -65,6 +65,7 @@
         self.doneTodos(doneArray.length);
         return true;
       };
+      return;
       self.countDoneText = function(bool) {
         var cnt, cntAll, text;
         cntAll = self.todos().length;
@@ -83,9 +84,22 @@
     my_model = new viewModel();
     ko.applyBindings(my_model);
     $("#commit").click(function() {
-      var jsonData;
-      jsonData = ko.toJSON(my_model);
-      return console.log(jsonData);
+      var jsData, jsonData;
+      jsonData = ko.toJSON(my_model.todos);
+      jsData = ko.toJS(my_model);
+      console.log(JSON.stringify(jsonData));
+      $.ajax('/create', {
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(jsonData),
+        error: function(jqXHR, textStatus, errorThrown) {
+          return alert("error");
+        },
+        success: function(data, textStatus, jqXHR) {
+          return alert("success");
+        }
+      });
     });
   });
 

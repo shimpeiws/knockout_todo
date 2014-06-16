@@ -67,11 +67,11 @@ $ ->
     
     self.countUpdate = (item) ->
       doneArray = ko.utils.arrayFilter(self.todos(), (item) ->
-          item.done()
-        )
-        self.doneTodos(doneArray.length)
-        return true
-      return
+        item.done()
+      )
+      self.doneTodos(doneArray.length)
+      return true
+    return
     
     self.countDoneText = (bool) ->
       cntAll = self.todos().length
@@ -91,7 +91,21 @@ $ ->
   ko.applyBindings(my_model)
   
   $("#commit").click ->
-    jsonData = ko.toJSON(my_model)
-    console.log(jsonData)
+    jsonData = ko.toJSON(my_model.todos)
+    jsData = ko.toJS(my_model)
+    # console.log(jsonData)
+    # console.log(jsData)
+    # console.log(jsData['todos'])
+    console.log(JSON.stringify(jsonData))
+    $.ajax '/create',
+        type: 'POST'
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(jsonData),
+        error: (jqXHR, textStatus, errorThrown) ->
+          alert("error")
+        success: (data, textStatus, jqXHR) ->
+          alert("success")
+    return
 
   return
