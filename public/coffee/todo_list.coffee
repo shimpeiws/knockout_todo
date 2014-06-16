@@ -96,13 +96,17 @@ $ ->
     # console.log(jsonData)
     # console.log(jsData)
     # console.log(jsData['todos'])
-    console.log(JSON.stringify(jsonData))
+    console.log(jsonData)
     $.ajax '/create',
         type: 'POST'
         contentType: 'application/json',
         dataType: 'json',
-        data: JSON.stringify(jsonData),
+        # data: JSON.stringify(jsonData),
+        data: jsonData,
         error: (jqXHR, textStatus, errorThrown) ->
+          console.log(jqXHR)
+          console.log(textStatus)
+          console.log(errorThrown)
           alert("error")
         success: (data, textStatus, jqXHR) ->
           alert("success")

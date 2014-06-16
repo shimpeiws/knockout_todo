@@ -87,13 +87,16 @@
       var jsData, jsonData;
       jsonData = ko.toJSON(my_model.todos);
       jsData = ko.toJS(my_model);
-      console.log(JSON.stringify(jsonData));
+      console.log(jsonData);
       $.ajax('/create', {
         type: 'POST',
         contentType: 'application/json',
         dataType: 'json',
-        data: JSON.stringify(jsonData),
+        data: jsonData,
         error: function(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR);
+          console.log(textStatus);
+          console.log(errorThrown);
           return alert("error");
         },
         success: function(data, textStatus, jqXHR) {

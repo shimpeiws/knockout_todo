@@ -1,0 +1,31 @@
+# Logfile created on 2014-06-16 10:54:03 +0900 by logger.rb/44203
+I, [2014-06-16T10:54:17.726408 #42314]  INFO -- : {}
+I, [2014-06-16T10:55:22.748461 #42314]  INFO -- : {}
+I, [2014-06-16T10:57:04.907952 #42314]  INFO -- : {}
+I, [2014-06-16T10:58:02.429860 #42314]  INFO -- : {}
+I, [2014-06-16T10:59:20.391652 #42314]  INFO -- : {}
+I, [2014-06-16T11:00:51.101333 #42314]  INFO -- : {}
+I, [2014-06-16T11:05:45.901633 #42314]  INFO -- : {}
+I, [2014-06-16T11:07:04.675715 #42314]  INFO -- : {}
+I, [2014-06-16T11:07:46.333338 #42314]  INFO -- : {}
+I, [2014-06-16T11:08:50.131262 #42314]  INFO -- : {}
+I, [2014-06-16T11:09:28.161711 #42314]  INFO -- : {}
+I, [2014-06-16T11:10:13.819543 #42314]  INFO -- : {}
+I, [2014-06-16T11:11:51.476736 #42314]  INFO -- : {}
+I, [2014-06-16T11:12:40.480935 #42774]  INFO -- : foo
+I, [2014-06-16T11:12:56.384341 #42774]  INFO -- : foo
+I, [2014-06-16T11:14:09.387001 #42774]  INFO -- : foo
+E, [2014-06-16T11:20:27.600700 #43467] ERROR -- : foo
+E, [2014-06-16T11:21:34.886565 #43467] ERROR -- : foo
+I, [2014-06-16T11:22:34.118720 #43802]  INFO -- : foo
+I, [2014-06-16T11:22:34.126752 #43802]  INFO -- : [{"title"=>"asdf", "done"=>false, "order"=>0, "updateCallback"=>true}, {"title"=>"testtest", "done"=>false, "order"=>0, "updateCallback"=>true}]
+I, [2014-06-16T13:37:33.986025 #53583]  INFO -- : foo
+I, [2014-06-16T13:37:33.994469 #53583]  INFO -- : [{"title"=>"test", "done"=>false, "order"=>0, "updateCallback"=>true}, {"title"=>"asdf", "done"=>false, "order"=>0, "updateCallback"=>true}]
+I, [2014-06-16T13:54:30.624268 #53997]  INFO -- : foo
+I, [2014-06-16T13:54:30.624486 #53997]  INFO -- : [{"title"=>"test", "done"=>false, "order"=>0, "updateCallback"=>true}, {"title"=>"asdf", "done"=>false, "order"=>0, "updateCallback"=>true}]
+I, [2014-06-16T13:55:46.697599 #54333]  INFO -- : foo
+I, [2014-06-16T13:55:46.697800 #54333]  INFO -- : [{"title"=>"asdf", "done"=>false, "order"=>0, "updateCallback"=>true}, {"title"=>"test", "done"=>false, "order"=>0, "updateCallback"=>true}]
+I, [2014-06-16T13:56:57.918895 #54666]  INFO -- : foo
+I, [2014-06-16T13:56:57.919042 #54666]  INFO -- : [{"title"=>"asdf", "done"=>false, "order"=>0, "updateCallback"=>true}, {"title"=>"test", "done"=>false, "order"=>0, "updateCallback"=>true}]
+I, [2014-06-16T14:01:09.420149 #55009]  INFO -- : foo
+I, [2014-06-16T14:01:09.420280 #55009]  INFO -- : [{"title"=>"foo", "done"=>false, "order"=>0, "updateCallback"=>true}, {"title"=>"bar", "done"=>false, "order"=>0, "updateCallback"=>true}]
